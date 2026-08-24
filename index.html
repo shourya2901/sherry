@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherry - Beautiful TO-DO App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-check-circle"></i> Sherry</h1>
+                <p>Your personal task companion</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-wrapper">
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="add-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="input-options">
+                    <div class="priority-selector">
+                        <label for="prioritySelect">Priority:</label>
+                        <select id="prioritySelect" class="priority-select">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="category-selector">
+                        <label for="categorySelect">Category:</label>
+                        <select id="categorySelect" class="category-select">
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="health">Health</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalCount">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completedCount">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pendingCount">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="highPriorityCount">0</div>
+                    <div class="stat-label">High Priority</div>
+                </div>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-list"></i> All
+                </button>
+                <button class="filter-btn" data-filter="active">
+                    <i class="fas fa-circle"></i> Active
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fas fa-check"></i> Completed
+                </button>
+                <button class="filter-btn" data-filter="high">
+                    <i class="fas fa-flag"></i> High Priority
+                </button>
+            </div>
+
+            <!-- Tasks List Section -->
+            <div class="tasks-section">
+                <div id="emptyState" class="empty-state">
+                    <i class="fas fa-inbox"></i>
+                    <p>No tasks yet. Add one to get started!</p>
+                </div>
+                <ul id="taskList" class="task-list"></ul>
+            </div>
+
+            <!-- Clear Completed -->
+            <div class="action-section">
+                <button id="clearBtn" class="clear-btn">
+                    <i class="fas fa-trash"></i> Clear Completed
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
